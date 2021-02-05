@@ -43,9 +43,6 @@ RUN mkdir -p /run/systemd && echo 'docker' > /run/systemd/container
 # Change the timezone
 COPY localtime /etc/localtime
 
-# use aliyun as sources mirror
-COPY sources.list /etc/apt/sources.list
-
 # update the apt sources
 RUN apt update && \
 	DEBIAN_FRONTEND=noninteractive apt install -y --no-install-recommends sudo && \
